@@ -26,29 +26,29 @@ int main(int argc, char const *argv[])
     //-----//
 
     int size = 3;
-    char a_arrary[3] = {'1', '2', '3'};
-    char *b_arrary[size];//是一個陣列，包含三個指向整數的指標，每個元素都是一個指標
-    char (*c_arrary)[size];//是一個指標，指向陣列的第一個元素
+    char a_array[3] = {'1', '2', '3'};
+    char *b_array[size];//是一個陣列，包含三個指向整數的指標，每個元素都是一個指標
+    char (*c_array)[size];//是一個指標，指向陣列的第一個元素
 
     for (int i = 0; i <= (size-1); i++)
     {
         /* code */
-        b_arrary[i] = &a_arrary[i];
+        b_array[i] = &a_array[i];
     }
-    c_arrary = &a_arrary;
+    c_array = &a_array;
 
     for (int i = 0; i <= (size-1); i++)
     {
         /* code */
-        printf( "a_array[%d] = %c\t", i, a_arrary[i]);
-        printf( "&a_array[%d] = %x\n", i, &a_arrary[i]);
-        printf("b_array[%d] = %x\t", i, b_arrary[i]);
-        printf( "*b_array[%d] = %c\t", i, *b_arrary[i]);
-        printf( "&b_array[%d] = %x\n", i, &b_arrary[i]);
-        printf( "c_arrary + %d = %x\t", i, c_arrary + i);//當i>0，也就是指向第一個元素之後做的偏移是沒有意義的。在此偏移後的地址是char[3]
-        printf( "(*c_arrary)[%d] = %c\t", i, (*c_arrary)[i]);
-        printf( "&(*c_arrary)[%d] = %x\t", i, &(*c_arrary)[i]);
-        printf( "&c_arrary + %d = %x\n", i, &c_arrary + i);//當i>0，也就是指向第一個元素之後做的偏移是沒有意義的，在此偏移後的char (*)[3]
+        printf( "a_array[%d] = %c\t", i, a_array[i]);
+        printf( "&a_array[%d] = %x\n", i, &a_array[i]);
+        printf("b_array[%d] = %x\t", i, b_array[i]);
+        printf( "*b_array[%d] = %c\t", i, *b_array[i]);
+        printf( "&b_array[%d] = %x\n", i, &b_array[i]);
+        printf( "c_array + %d = %x\t", i, c_array + i);//當i>0，也就是指向第一個元素之後做的偏移是沒有意義的。在此偏移後的地址是char[3]
+        printf( "(*c_array)[%d] = %c\t", i, (*c_array)[i]);
+        printf( "&(*c_array)[%d] = %x\t", i, &(*c_array)[i]);
+        printf( "&c_array + %d = %x\n", i, &c_array + i);//當i>0，也就是指向第一個元素之後做的偏移是沒有意義的，在此偏移後的char (*)[3]
         //printf( "%d \n", sizeof(char *[3]));
         printf( "\n");
     }
