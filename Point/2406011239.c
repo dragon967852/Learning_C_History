@@ -29,6 +29,7 @@ int main(int argc, char const *argv[])
     char a_array[3] = {'1', '2', '3'};
     char *b_array[size];//是一個陣列，包含三個指向整數的指標，每個元素都是一個指標
     char (*c_array)[size];//是一個指標，指向陣列的第一個元素
+    const char *d_array = "123\0abc";//指派，只有唯讀，不能寫
 
     for (int i = 0; i <= (size-1); i++)
     {
@@ -50,6 +51,9 @@ int main(int argc, char const *argv[])
         printf( "&(*c_array)[%d] = %x\t", i, &(*c_array)[i]);
         printf( "&c_array + %d = %x\n", i, &c_array + i);//當i>0，也就是指向第一個元素之後做的偏移是沒有意義的，在此偏移後的char (*)[3]
         //printf( "%d \n", sizeof(char *[3]));
+        printf( "d_array = %s\n", d_array);//d_array是一個指針，指向的是字符串的第一個字符，printf只印到停止\0的地方
+        printf( "&d_array = %x\n", &d_array);
+
         printf( "\n");
     }
     printf( "\n-----\n");
