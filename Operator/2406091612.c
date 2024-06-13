@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 //Struct
 struct StructName
@@ -133,6 +134,7 @@ int main(int argc, char const *argv[])
     printf( "unionData.str = %s\n", unionData.str);
     printf( "\n-----\n");
     //-----//
+
     //i++ & ++i
     int addI = 10;
     printf( "addI = %d\n", addI);
@@ -142,5 +144,10 @@ int main(int argc, char const *argv[])
     printf( "addI++ + ++addI = %d\n", addI++ + ++addI);
     printf( "\n-----\n");
     //-----//
+
+    //&& ||
+    int OpA = 1, OpB = 0;
+    printf( "(OpA < OpB) && (OpA < OpB) = %d\n", ((OpA < OpB) && (OpA < OpB)));
+    printf( "(OpA < OpB) || (OpA < OpB) = %d\n", ((OpA < OpB) && (OpA < OpB)));
     return 0;
 }
